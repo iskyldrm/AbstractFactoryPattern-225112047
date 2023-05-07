@@ -1,14 +1,35 @@
 ﻿
+using AdvertServices.BLL;
+using AdvertServices.DL.Abstract;
 using PhoneServices.BLL.Abstract;
 using PhoneServices.BLL.Concrete;
 using PhoneServices.DL.Concrete;
 
 //Seneryomuzda bir telefon bayinin telefon servisinden istediği telefon modelini ürettirebilmesi
 
+bas3:
+Console.WriteLine("Senaryo tercihinizi seçin: (1: phoneservices 2:advertservices)");
+var choice = Console.ReadLine();
 
-bayi bayi = new bayi();
+if (choice == "1")
+{
+    bayi bayi = new bayi();
 
-bayi.getPhone();
+    bayi.getPhone();
+}
+else if (choice == "2")
+{
+    reklam reklam = new reklam();
+    reklam.getAdvert();
+}
+else
+{
+    goto bas3;
+}
+
+
+
+
 
 class bayi
 {
@@ -53,5 +74,68 @@ class bayi
 
             Console.WriteLine(response + " Telefonu getirildi.");
         }
+    }
+}
+
+class reklam
+{
+    IAdvertFactory advertFactory = new IAdvertFactory();
+    public void getAdvert()
+    {
+        while (true)
+        {
+            string response = "";
+        bas:
+            Console.Write("bölge:");
+            var location = Console.ReadLine();
+            Console.Write("reklam:");
+            var advert = Console.ReadLine();
+            
+
+            if (location == "h")
+            {
+                advertFactory = new IndiaAdvertFactory();
+                Console.WriteLine(getsubadvert(advertFactory, advert, Location.INDIA)); 
+            }
+            else if (location == "a")
+            {
+                Console.WriteLine(getsubadvert(advertFactory, advert, Location.USA));
+            }
+            else if (location == "g")
+            {
+                Console.WriteLine(getsubadvert(advertFactory, advert, Location.HERYER));
+            }
+            else
+            {
+                goto bas;
+            }
+
+        }
+    }
+
+    public string getsubadvert(IAdvertFactory advertFactory,string advert,Location location)
+    {
+        string response = "";
+
+        bas2:
+
+        if (advert == "y")
+        {
+            response = advertFactory.buildCar(AdvertType.Youtube,location).ToString();
+        }
+        else if (advert == "g")
+        {
+            response = advertFactory.buildCar(AdvertType.Google, location).ToString();
+        }
+        else if (advert == "a")
+        {
+            response = advertFactory.buildCar(AdvertType.Genel, location).ToString();
+        }
+        else
+        {
+            goto bas2;
+        }
+
+        return response + " reklamı getirildi.";
     }
 }

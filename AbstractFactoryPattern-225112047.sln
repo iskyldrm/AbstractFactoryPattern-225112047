@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactoryPattern-2251
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneServices", "PhoneServices\PhoneServices.csproj", "{8725F955-0FE9-4FD2-8D6A-8A6968DD23AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvertServices", "AdvertServices\AdvertServices.csproj", "{1184D566-5495-45C9-81A0-257B6EFE9D91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8725F955-0FE9-4FD2-8D6A-8A6968DD23AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8725F955-0FE9-4FD2-8D6A-8A6968DD23AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8725F955-0FE9-4FD2-8D6A-8A6968DD23AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1184D566-5495-45C9-81A0-257B6EFE9D91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1184D566-5495-45C9-81A0-257B6EFE9D91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1184D566-5495-45C9-81A0-257B6EFE9D91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1184D566-5495-45C9-81A0-257B6EFE9D91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
